@@ -6,8 +6,13 @@ local Apps = {
 	},
 
 	{
-		KEY = "SUPER + V",
+		KEY = "SUPER + SPACE",
 		EXEC = hl.dsp.exec_cmd("rofi -show drun"),
+	},
+
+	{
+		KEY = "SUPER + RETURN",
+		EXEC = hl.dsp.exec_cmd("alacritty"),
 	},
 }
 
