@@ -12,10 +12,9 @@ local Keymaps = {}
 --    }
 --  }
 -- }
-Keymaps.Maps = CONFIG.MAPS
 
 Keymaps.Init = function()
-	for _, keymap in pairs(Keymaps.Maps) do
+	for _, keymap in pairs(CONFIG.MAPS) do
 		for _, map in ipairs(keymap) do
 			local key = map.KEY
 			local exec = map.EXEC
