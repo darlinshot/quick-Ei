@@ -1,93 +1,11 @@
-require("Modules.Keymaps.Init").Init()
+require("Modules.Keymap.Init").Init()
 require("Modules.Environment.Init").Init()
 require("Modules.HyprlandConfig.Init").Init()
+require("Modules.Monitor.Init").Init()
+require("Modules.Device.Init").Init()
+require("Modules.WindowRule.Init").Init()
+
+-- What if we make another module to handle events?
 hl.on("hyprland.start", function()
 	require("Modules.Startup.Init").Init()
 end)
-hl.monitor({
-	output = "eDP-1",
-	mode = "1920x1080@144",
-	position = "auto",
-	scale = 1.2,
-})
-
-hl.config({
-	misc = {
-		force_default_wallpaper = -1, -- Set to 0 or 1 to disable the anime mascot wallpapers
-		disable_hyprland_logo = false, -- If true disables the random hyprland logo / anime girl background. :(
-	},
-})
-
----------------
----- INPUT ----
----------------
-
-hl.config({
-	input = {
-		kb_layout = "us",
-		kb_variant = "",
-		kb_model = "",
-		kb_options = "",
-		kb_rules = "",
-
-		follow_mouse = true,
-
-		sensitivity = 0, -- -1.0 - 1.0, 0 means no modification.
-
-		touchpad = {
-			natural_scroll = false,
-		},
-	},
-})
-
-hl.gesture({
-	fingers = 3,
-	direction = "horizontal",
-	action = "workspace",
-})
-
-hl.device({
-	name = "epic-mouse-v1",
-	sensitivity = 1,
-})
-
-local suppressMaximizeRule = hl.window_rule({
-	-- Ignore maximize requests from all apps. You'll probably like this.
-	name = "suppress-maximize-events",
-	match = { class = ".*" },
-
-	suppress_event = "maximize",
-})
--- suppressMaximizeRule:set_enabled(false)
-
-hl.window_rule({
-	-- Fix some dragging issues with XWayland
-	name = "fix-xwayland-drags",
-	match = {
-		class = "^$",
-		title = "^$",
-		xwayland = true,
-		float = true,
-		fullscreen = false,
-		pin = false,
-	},
-
-	no_focus = true,
-})
-
--- Layer rules also return a handle.
--- local overlayLayerRule = hl.layer_rule({
---     name  = "no-anim-overlay",
---     match = { namespace = "^my-overlay$" },
---     no_anim = true,
--- })
--- overlayLayerRule:set_enabled(false)
-
--- Hyprland-run windowrule
-hl.window_rule({
-	name = "move-hyprland-run",
-	match = { class = "hyprland-run" },
-
-	move = "20 monitor_h-120",
-	float = true,
-})
