@@ -6,8 +6,8 @@ local Style = {
 		border_size = 2,
 
 		col = {
-			active_border = { colors = { "#d1bfe7" } },
-			inactive_border = "#b8c8da",
+			active_border = { colors = { "{{colors.tertiary.default.hex}}" } },
+			inactive_border = "{{colors.secondary.default.hex}}",
 		},
 
 		layout = "dwindle",

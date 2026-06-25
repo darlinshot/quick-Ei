@@ -1,11 +1,11 @@
 local Apps = {
 	{
-		KEY = "CTRL + B + right",
+		KEY = "CTRL + XF86AudioRaiseVolume",
 		EXEC = hl.dsp.exec_cmd("brightnessctl set 5%+"),
 	},
 
 	{
-		KEY = "CTRL + B + left",
+		KEY = "CTRL + XF86AudioLowerVolume",
 		EXEC = hl.dsp.exec_cmd("brightnessctl set 5%-"),
 	},
 }

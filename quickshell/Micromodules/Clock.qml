@@ -15,59 +15,31 @@ Item {
         clock.currentTime = new Date()
     }
 
-    width: background.width
-    height: background.height
+    implicitWidth: background.width
+    implicitHeight: background.height
 
     Rectangle {
         id: background
         anchors.centerIn: parent
 
-        width: contentHolder.width + Style.barWidgetsWidth
-        height: Style.barWidgetsHeight
+        implicitWidth: time.width
+        implicitHeight: Style.barHeight
         
-        radius: Style.barWidgetsRadius
+        radius: Style.widgetRadius
         color: Colors.bg1
 
-        border.color: Colors.bg2
-        border.width: Style.barWidgetsBorderWidth
-        
-        Column {
-            id: contentHolder
-            anchors.centerIn: parent
-            spacing: 2
+        Text {
+          id: time
+          //anchors.horizontalCenter: parent.horizontalCenter
+          anchors.centerIn: parent
 
-            Text {
-                id: time
-                anchors.horizontalCenter: parent.horizontalCenter
-
-                color: Colors.tx1
-                font {
-                    family: Style.fontFamily;
-                    weight: Style.fontWeight1;
-                    pixelSize: Style.fontSize2
-                }
-                text: Qt.formatDateTime(currentTime, "󰥔 HH:mm:ss")
-            }
-
-            Text {
-                id: date
-
-                text: Qt.formatDateTime(currentTime, " dddd, dd/MM")
-
-                font {
-                    family: Style.fontFamily;
-                    weight: Style.fontWeight1;
-                    pixelSize: Style.fontSize3
-                }
-                
-                LinearGradient {
-                    anchors.fill: parent
-                    source: parent
-                    start: Qt.point(0, 0)
-                    end: Qt.point(0, parent.height)
-                    gradient: Style.gradTx2
-                }
-            }
+          color: Colors.tx1
+          font {
+            family: Style.fontFamily;
+            weight: Tokens.fontWeight1;
+            pixelSize: Style.fontSize
+          }
+          text: Qt.formatDateTime(currentTime, "󰥔 HH:mm")
         }
     }
 

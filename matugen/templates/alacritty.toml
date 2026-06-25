@@ -1,0 +1,39 @@
+[window]
+opacity = 0.8
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Propo"
+style = "SemiBold"
+
+
+[colors.primary]
+background = "{{colors.background.default.hex}}"
+foreground = "{{colors.primary.default.hex}}"
+
+[colors.cursor]
+text = "{{colors.primary.default.hex}}"
+cursor = "{{colors.primary.default.hex}}"
+
+[colors.normal]
+black   = "{{colors.surface_container_highest.default.hex}}"
+red     = "{{colors.error_container.default.hex}}"
+green   = "{{colors.secondary.default.hex}}"
+yellow  = "{{colors.secondary.default.hex}}"
+blue    = "{{colors.tertiary.default.hex}}"
+magenta = "{{colors.inverse_primary.default.hex}}"
+cyan    = "{{colors.on_surface.default.hex}}"
+white   = "{{colors.on_surface_variant.default.hex}}"
+
+[colors.bright]
+black   = "{{colors.outline_variant.default.hex}}"
+red     = "{{colors.error_container.default.hex}}"
+green   = "{{colors.primary_container.default.hex}}"
+yellow  = "{{colors.tertiary_container.default.hex}}"
+blue    = "{{colors.secondary_container.default.hex}}"
+magenta = "{{colors.inverse_surface.default.hex}}"
+cyan    = "{{colors.on_primary_container.default.hex}}"
+white   = "{{colors.on_surface.default.hex}}"
+
