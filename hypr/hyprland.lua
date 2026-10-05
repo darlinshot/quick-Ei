@@ -1,11 +1,11 @@
-require("Modules.Keymap.Init").Init()
-require("Modules.Environment.Init").Init()
-require("Modules.HyprlandConfig.Init").Init()
-require("Modules.Monitor.Init").Init()
-require("Modules.Device.Init").Init()
-require("Modules.WindowRule.Init").Init()
+require("modules.keymap.init").init()
+require("modules.environment.init").init()
+require("modules.hyprlandconfig.init").init()
+require("modules.monitor.init").init()
+require("modules.device.init").init()
+require("modules.windowrule.init").init()
 
 -- What if we make another module to handle events?
 hl.on("hyprland.start", function()
-	require("Modules.Startup.Init").Init()
+	require("modules.startup.init").init()
 end)
