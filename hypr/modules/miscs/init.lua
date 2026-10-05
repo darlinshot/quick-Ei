@@ -1,4 +1,4 @@
-local CONFIG = require("/modules/hyprlandconfig/config")
+local CONFIG = require("/modules/miscs/config")
 
 local Startup = {}
 

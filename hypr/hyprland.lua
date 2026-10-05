@@ -1,6 +1,6 @@
 require("modules.keymap.init").init()
 require("modules.environment.init").init()
-require("modules.hyprlandconfig.init").init()
+require("modules.miscs.init").init()
 require("modules.monitor.init").init()
 require("modules.device.init").init()
 require("modules.windowrule.init").init()
